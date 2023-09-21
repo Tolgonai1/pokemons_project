@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import classes from "./pokemonList.module.css";
 
 export const PokemonList = () =>{
     const [pokemons,setPokemons] = useState([])
@@ -15,15 +16,19 @@ export const PokemonList = () =>{
         axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res)=> setPokemons(res))
     }
     return (
-        <div>
+        <>
+            <h1 className={classes.title}>Pokemon</h1>
+            <div className={classes.wrapper}>
             {pokemons.map(pokemon => (
-                <ul key={pokemon.data.id}>
-                    <li>
+                <ul key={pokemon.data.id} className={classes.list}>
+                    <li className={classes.item}>
                         <h3>{pokemon.data.name}</h3>
                         <img src={pokemon.data.sprites.front_default} alt="pokemon"/>
                     </li>
                 </ul>
             ))}
         </div>
+        </>
+
     )
 }

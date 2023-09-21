@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.list{
+    width:25%;
+    background-color: #c0c0e3;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 30px;
+}
+.item{
+    list-style: none;
+    text-align: center;
+}
+.title{
+    text-align: center;
+    padding-top: 20px;
+}
